@@ -80,7 +80,7 @@
     <div class="mt-12">
         <div class="grid grid-rows-1 grid-flow-col">
             <div class="grid grid-cols-1 grid-span-1">
-                <h2 class=" flex items-center text-3xl font-extrabold tracking-tight text-gray-900">
+                <h2 class=" flex justify-center text-2xl font-extrabold tracking-tight text-gray-900 px-8">
                         STICKS ET CIRE 100% FRANÇAIS
                 </h2>
                 <p class="flex text-center mt-4 text-lg text-gray-500 px-8">
