@@ -1,11 +1,14 @@
 <?php
 
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\dealerController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SocietyController;
+use App\Http\Controllers\userSettingsController;
 use App\Http\Controllers\WhereController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,6 +30,12 @@ Route::get('/', function () {
 //Route::get('/dashboard', function () {
 //    return view('dashboard');
 //})->middleware(['auth'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/register', [RegisteredUserController::class, 'index'])->name('register');
+    Route::get('/login', [AuthenticatedSessionController::class, 'index'])->name('login');
+    Route::get('/users', [userSettingsController::class, 'index'])->name('users');
+});
 
 
 Route::prefix('/')->group(function () {
